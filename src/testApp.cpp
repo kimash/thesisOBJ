@@ -3,12 +3,11 @@
 //--------------------------------------------------------------
 void testApp::setup(){
     ofBackground(0);
-    //triangle.setup(ofVec3f(300, 300, 0));
+    triangle.setup(ofVec3f(700, 400, 0));
 
     ofxObjLoader::load("triangle2.obj", meshy);
 //    cout << "verts? " << meshy.getNumVertices() << endl;
 //    cout << "tris? " << meshy.getNumIndices()/3 << endl;
-//    meshy.load("triangle2.ply");
     
     ofVec3f centroid = meshy.getCentroid();
     for(int i = 0; i < meshy.getNumVertices(); i++){
@@ -36,7 +35,7 @@ void testApp::draw(){
 //    ofTranslate(-meshy.getCentroid());
     ofScale(1000,1000,1000);
   //  ofTranslate(meshy.getCentroid());
-    glPointSize(10);
+//    glPointSize(10);
 //    meshy.drawVertices();
 //    meshy.drawWireframe();
     meshy.draw();

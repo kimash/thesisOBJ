@@ -11,13 +11,12 @@
 
 #include "ofMain.h" 
 #include "ofxObjLoader.h"
-#include "ofx3DModelLoader.h"
 
 class Dihedral3
 {
 public:
     ofVec3f pos;    //xyz position
-    ofx3DModelLoader tri;
+    ofMesh meshy;
     
     void setup(ofVec3f pos);
     void display();
