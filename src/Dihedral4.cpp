@@ -10,15 +10,24 @@
 #include "Dihedral4.h"
 #include "ofMain.h"
 #include "ofxObjLoader.h"
-#include "ofx3DModelLoader.h"
 
-void Dihedral4::setup(ofVec3f pos/*, float side*/){
+void Dihedral4::setup(ofVec3f pos){
     this->pos = pos;
-//    this->side = side;
+    //now my mesh is full of obj
+    ofxObjLoader::load("square.obj", meshy);
+    //centering object
+    ofVec3f centroid = meshy.getCentroid();
+    for(int i = 0; i < meshy.getNumVertices(); i++){
+        meshy.getVertices()[i] = meshy.getVertices()[i] -    centroid;
+    }
 }
 
 void Dihedral4::display(){
     ofPushStyle();
+    ofPushMatrix();
+    ofScale(1000,1000,1000);
+    meshy.draw();
+    ofPopMatrix();
     ofPopStyle();
 }
 

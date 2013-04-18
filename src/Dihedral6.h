@@ -10,15 +10,14 @@
 #define thesisD4_Dihedral6_h
 #include "ofMain.h"
 #include "ofxObjLoader.h"
-#include "ofx3DModelLoader.h"
 
 class Dihedral6
 {
 public:
     ofVec3f pos;
-    //float side; //length of side
+    ofMesh meshy;
     
-    void setup(ofVec3f pos/*, float side*/);
+    void setup(ofVec3f pos);
     void display();
     void motionA();
     void motionB();

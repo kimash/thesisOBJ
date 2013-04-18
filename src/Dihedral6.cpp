@@ -10,15 +10,24 @@
 #include "Dihedral6.h"
 #include "ofMain.h"
 #include "ofxObjLoader.h"
-#include "ofx3DModelLoader.h"
 
 void Dihedral6::setup(ofVec3f pos/*, float side*/){
     this->pos = pos;
-    //this->side = side;
+    //now my mesh is full of obj
+    ofxObjLoader::load("hexagon2.obj", meshy);
+    //centering object
+    ofVec3f centroid = meshy.getCentroid();
+    for(int i = 0; i < meshy.getNumVertices(); i++){
+        meshy.getVertices()[i] = meshy.getVertices()[i] -    centroid;
+    }
 }
 
 void Dihedral6::display(){
     ofPushStyle();
+    ofPushMatrix();
+    ofScale(1000,1000,1000);
+    meshy.draw();
+    ofPopMatrix();
     ofPopStyle();
 }
 
