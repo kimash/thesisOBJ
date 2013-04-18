@@ -25,6 +25,7 @@ void Dihedral3::setup(ofVec3f pos){
 void Dihedral3::display(){
     ofPushStyle();
     ofPushMatrix();
+//    ofTranslate(meshy.getCentroid());
     ofScale(1000,1000,1000);
     meshy.draw();
     ofPopMatrix();

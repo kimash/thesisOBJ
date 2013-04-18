@@ -3,18 +3,20 @@
 //--------------------------------------------------------------
 void testApp::setup(){
     ofBackground(0);
-    triangle.setup(ofVec3f(700, 400, 0));
+//    triangle.setup(ofVec3f(500, 400, 0));
+//    square.setup(ofVec3f(500, 500, 0));
+    hexagon.setup(ofVec3f(500, 500, 0));
 
-    ofxObjLoader::load("triangle2.obj", meshy);
+//    ofxObjLoader::load("triangle2.obj", meshy);
 //    cout << "verts? " << meshy.getNumVertices() << endl;
 //    cout << "tris? " << meshy.getNumIndices()/3 << endl;
     
-    ofVec3f centroid = meshy.getCentroid();
-    for(int i = 0; i < meshy.getNumVertices(); i++){
-        meshy.getVertices()[i] = meshy.getVertices()[i] -    centroid;
-        cout << meshy.getCentroid() << endl;
-        cout << meshy.getVertex(i) << endl;
-    }
+//    ofVec3f centroid = meshy.getCentroid();
+//    for(int i = 0; i < meshy.getNumVertices(); i++){
+//        meshy.getVertices()[i] = meshy.getVertices()[i] -    centroid;
+//        cout << meshy.getCentroid() << endl;
+//        cout << meshy.getVertex(i) << endl;
+//    }
     
 }
 
@@ -25,22 +27,20 @@ void testApp::update(){
 
 //--------------------------------------------------------------
 void testApp::draw(){
-    
-    triangle.display();
-//    cam.lookAt(meshy.getCentroid());
-    
     cam.begin();
-    
-    ofPushMatrix();
+//    triangle.display();
+//    square.display();
+    hexagon.display();
+//    cam.lookAt(meshy.getCentroid());
+//    ofPushMatrix();
 //    ofTranslate(-meshy.getCentroid());
-    ofScale(1000,1000,1000);
+//    ofScale(1000,1000,1000);
   //  ofTranslate(meshy.getCentroid());
 //    glPointSize(10);
 //    meshy.drawVertices();
 //    meshy.drawWireframe();
-    meshy.draw();
-    ofPopMatrix();
-    
+//    meshy.draw();
+//    ofPopMatrix();    
     cam.end();
 }
 
