@@ -4,7 +4,6 @@
 #include "Dihedral3.h"
 #include "Dihedral4.h"
 #include "Dihedral6.h"
-#include "ofxAssimpModelLoader.h"
 
 class testApp : public ofBaseApp{
 
@@ -27,5 +26,5 @@ class testApp : public ofBaseApp{
     Dihedral4 square;
     Dihedral6 hexagon;
     ofEasyCam cam;
-    ofMesh meshy;		
+//    ofMesh meshy;		
 };

@@ -16,7 +16,7 @@ class Dihedral3
 {
 public:
     ofVec3f pos;    //xyz position
-    ofMesh meshy;
+    ofMesh meshy;   //load obj file into this mesh
     
     void setup(ofVec3f pos);
     void display();

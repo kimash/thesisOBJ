@@ -25,7 +25,8 @@ void Dihedral4::setup(ofVec3f pos){
 void Dihedral4::display(){
     ofPushStyle();
     ofPushMatrix();
-    ofRotate(45, 0, 1, 0); //orient as square, not diamond
+    ofRotateX(90);  //orient in x-y plane
+    ofRotateY(45); //orient as square, not diamond
     ofScale(1000,1000,1000);
     meshy.draw();
     ofPopMatrix();

@@ -3,9 +3,9 @@
 //--------------------------------------------------------------
 void testApp::setup(){
     ofBackground(0);
-//    triangle.setup(ofVec3f(500, 400, 0));
-//    square.setup(ofVec3f(500, 500, 0));
-    hexagon.setup(ofVec3f(500, 500, 0));
+    triangle.setup(ofVec3f(500, 400, 0));
+    square.setup(ofVec3f(800, 500, 0));
+    hexagon.setup(ofVec3f(1100, 500, 0));
 
 //    ofxObjLoader::load("triangle2.obj", meshy);
 //    cout << "verts? " << meshy.getNumVertices() << endl;
@@ -35,10 +35,7 @@ void testApp::draw(){
 //    ofPushMatrix();
 //    ofTranslate(-meshy.getCentroid());
 //    ofScale(1000,1000,1000);
-  //  ofTranslate(meshy.getCentroid());
-//    glPointSize(10);
-//    meshy.drawVertices();
-//    meshy.drawWireframe();
+//  ofTranslate(meshy.getCentroid());
 //    meshy.draw();
 //    ofPopMatrix();    
     cam.end();
