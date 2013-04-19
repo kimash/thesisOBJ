@@ -3,21 +3,9 @@
 //--------------------------------------------------------------
 void testApp::setup(){
     ofBackground(0);
-    triangle.setup(ofVec3f(500, 400, 0));
-    square.setup(ofVec3f(800, 500, 0));
-    hexagon.setup(ofVec3f(1100, 500, 0));
-
-//    ofxObjLoader::load("triangle2.obj", meshy);
-//    cout << "verts? " << meshy.getNumVertices() << endl;
-//    cout << "tris? " << meshy.getNumIndices()/3 << endl;
-    
-//    ofVec3f centroid = meshy.getCentroid();
-//    for(int i = 0; i < meshy.getNumVertices(); i++){
-//        meshy.getVertices()[i] = meshy.getVertices()[i] -    centroid;
-//        cout << meshy.getCentroid() << endl;
-//        cout << meshy.getVertex(i) << endl;
-//    }
-    
+    triangle.setup(ofVec3f(ofGetWidth()/3, ofGetHeight()/2, 0));
+    square.setup(ofVec3f(2*ofGetWidth()/3, ofGetHeight()/2, 0));
+    hexagon.setup(ofVec3f(ofGetWidth()/2, ofGetHeight()/2, 0));
 }
 
 //--------------------------------------------------------------
@@ -27,18 +15,16 @@ void testApp::update(){
 
 //--------------------------------------------------------------
 void testApp::draw(){
-    cam.begin();
-//    triangle.display();
-//    square.display();
+//    cam.begin();
+    triangle.display();
+    square.display();
     hexagon.display();
-//    cam.lookAt(meshy.getCentroid());
-//    ofPushMatrix();
-//    ofTranslate(-meshy.getCentroid());
-//    ofScale(1000,1000,1000);
-//  ofTranslate(meshy.getCentroid());
-//    meshy.draw();
-//    ofPopMatrix();    
-    cam.end();
+//    cam.end();
+    
+    //useful bits of code:
+ /*   cam.lookAt(meshy.getCentroid());
+    ofTranslate(-meshy.getCentroid());
+  ofTranslate(meshy.getCentroid()); */
 }
 
 //--------------------------------------------------------------

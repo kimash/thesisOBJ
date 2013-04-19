@@ -25,6 +25,7 @@ void Dihedral6::setup(ofVec3f pos/*, float side*/){
 void Dihedral6::display(){
     ofPushStyle();
     ofPushMatrix();
+    ofTranslate(pos.x, pos.y, pos.z);   //give shape position
     ofRotateX(90);  //orient in x-y plane
     ofScale(1000,1000,1000);
     meshy.draw();

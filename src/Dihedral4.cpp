@@ -25,6 +25,7 @@ void Dihedral4::setup(ofVec3f pos){
 void Dihedral4::display(){
     ofPushStyle();
     ofPushMatrix();
+    ofTranslate(pos.x, pos.y, pos.z);   //give shape position
     ofRotateX(90);  //orient in x-y plane
     ofRotateY(45); //orient as square, not diamond
     ofScale(1000,1000,1000);

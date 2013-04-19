@@ -25,7 +25,8 @@ void Dihedral3::setup(ofVec3f pos){
 void Dihedral3::display(){
     ofPushStyle();
     ofPushMatrix();
-    ofRotateX(90);  //orient in x-y plane
+    ofTranslate(pos.x, pos.y, pos.z);   //give shape position
+    ofRotateX(-90);  //orient in x-y plane
     ofScale(1000,1000,1000);
     meshy.draw();
     ofPopMatrix();
