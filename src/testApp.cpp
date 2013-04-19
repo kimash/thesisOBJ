@@ -29,7 +29,13 @@ void testApp::draw(){
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
-
+    if (ofGetKeyPressed('a')) {
+        triangle.motionA();
+    }
+    
+    if (ofGetKeyPressed('b')) {
+        triangle.motionB();
+    }
 }
 
 //--------------------------------------------------------------

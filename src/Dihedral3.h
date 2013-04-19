@@ -17,6 +17,10 @@ class Dihedral3
 public:
     ofVec3f pos;    //xyz position
     ofMesh meshy;   //load obj file into this mesh
+    ofQuaternion current;
+    ofQuaternion a;
+    ofQuaternion b;
+    ofQuaternion identity;
     
     void setup(ofVec3f pos);
     void display();

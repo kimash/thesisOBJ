@@ -25,18 +25,28 @@ void Dihedral3::setup(ofVec3f pos){
 void Dihedral3::display(){
     ofPushStyle();
     ofPushMatrix();
+    
+    ofMatrix4x4 view;
+    current.get(view);
+    ofMultMatrix(view);
+    
     ofTranslate(pos.x, pos.y, pos.z);   //give shape position
     ofRotateX(-90);  //orient in x-y plane
     ofScale(1000,1000,1000);
     meshy.draw();
+    
     ofPopMatrix();
     ofPopStyle();
 }
 
-void Dihedral3::motionA(){  //rotate 60 degrees CCW
-    
+void Dihedral3::motionA(){  //rotate 60 degrees CCW about z
+    identity.makeRotate(0, 0, 0, 0);
+    a.makeRotate(60, 0, 0, 1);
+    current.slerp(0.75, identity, a);
 }
 
-void Dihedral3::motionB(){  //horizontal flip
-    
+void Dihedral3::motionB(){  //horizontal flip: 180 about y
+    identity.makeRotate(0, 0, 0, 0);
+    a.makeRotate(180, 0, 1, 0);
+    current.slerp(1, identity, b);
 }
