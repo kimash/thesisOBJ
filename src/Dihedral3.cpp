@@ -39,14 +39,18 @@ void Dihedral3::display(){
     ofPopStyle();
 }
 
-void Dihedral3::motionA(){  //rotate 60 degrees CCW about z
+void Dihedral3::motionA(){  
+    //60 deg CCW about axis thru center parallel to z
+    ofVec3f axisPoint(pos.x, pos.y, pos.z);
     identity.makeRotate(0, 0, 0, 0);
     a.makeRotate(60, 0, 0, 1);
     current.slerp(0.75, identity, a);
+    ofPoint rotatedPoint = current * axisPoint;
 }
 
-void Dihedral3::motionB(){  //horizontal flip: 180 about y
+void Dihedral3::motionB(){  
+    //180 deg CCW about axis across center parallel to y
     identity.makeRotate(0, 0, 0, 0);
-    a.makeRotate(180, 0, 1, 0);
-    current.slerp(1, identity, b);
+    b.makeRotate(180, 0, 1, 0);
+    current.slerp(0.5, identity, b);
 }

@@ -34,10 +34,12 @@ void Dihedral4::display(){
     ofPopStyle();
 }
 
-void Dihedral4::motionA(){  //rotate 90 degrees CCW
+void Dihedral4::motionA(){  
+    //90 deg CCW about axis thru center parallel to z
     
 }
 
-void Dihedral4::motionB(){  //horizontal flip
+void Dihedral4::motionB(){  
+    //180 deg CCW about axis across center parallel to y
     
 }

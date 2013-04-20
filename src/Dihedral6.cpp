@@ -33,14 +33,17 @@ void Dihedral6::display(){
     ofPopStyle();
 }
 
-void Dihedral6::motionA(){  //vertical flip
+void Dihedral6::motionA(){  
+    //180 deg CCW about axis across center parallel to x
     
 }
 
-void Dihedral6::motionB(){  //rotate 120 degrees CCW about axis thru center
+void Dihedral6::motionB(){  
+    //120 degrees CCW about axis thru center parallel to z
     
 }
 
-void Dihedral6::motionC(){  //rotate 180 degrees CCW about axis thru center
+void Dihedral6::motionC(){  
+    //180 degrees CCW about axis thru center parallel to z
     
 }
