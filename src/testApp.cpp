@@ -36,6 +36,7 @@ void testApp::keyPressed(int key){
     if (ofGetKeyPressed('b')) {
         triangle.motionB();
     }
+    
 }
 
 //--------------------------------------------------------------

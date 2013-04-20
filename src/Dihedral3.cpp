@@ -43,7 +43,7 @@ void Dihedral3::motionA(){
     //60 deg CCW about axis thru center parallel to z
     ofVec3f axisPoint(pos.x, pos.y, pos.z);
     identity.makeRotate(0, 0, 0, 0);
-    a.makeRotate(60, 0, 0, 1 + pos.z);
+    a.makeRotate(60, 0, 0, 1);
     current.slerp(0.25, identity, a);
     ofPoint rotatedPoint = current * axisPoint;
 }
