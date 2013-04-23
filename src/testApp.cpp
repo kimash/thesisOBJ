@@ -10,7 +10,9 @@ void testApp::setup(){
 
 //--------------------------------------------------------------
 void testApp::update(){
-
+    triangle.update();
+    square.motionA();
+    hexagon.motionA();
 }
 
 //--------------------------------------------------------------
@@ -20,11 +22,6 @@ void testApp::draw(){
     square.display();
     hexagon.display();
 //    cam.end();
-    
-    //useful bits of code:
- /*   cam.lookAt(meshy.getCentroid());
-    ofTranslate(-meshy.getCentroid());
-  ofTranslate(meshy.getCentroid()); */
 }
 
 //--------------------------------------------------------------

@@ -24,8 +24,14 @@ void Dihedral6::setup(ofVec3f pos/*, float side*/){
 
 void Dihedral6::display(){
     ofPushStyle();
+    ofSetColor(54, 136, 176);
     ofPushMatrix();
+    ofTranslate(meshy.getCentroid());
     ofTranslate(pos.x, pos.y, pos.z);   //give shape position
+    ofMatrix4x4 view;
+    current.get(view);
+    ofMultMatrix(view);
+    ofTranslate(-meshy.getCentroid());    
     ofRotateX(90);  //orient in x-y plane
     ofScale(1000,1000,1000);
     meshy.draw();
@@ -35,7 +41,9 @@ void Dihedral6::display(){
 
 void Dihedral6::motionA(){  
     //180 deg CCW about axis across center parallel to x
-    
+    ofQuaternion dQ;
+    dQ.makeRotate(1, 1, 0, 0);
+    current *= dQ;
 }
 
 void Dihedral6::motionB(){  

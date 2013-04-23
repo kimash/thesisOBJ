@@ -16,6 +16,7 @@ class Dihedral6
 public:
     ofVec3f pos;
     ofMesh meshy;
+    ofQuaternion current;
     
     void setup(ofVec3f pos);
     void display();

@@ -20,12 +20,12 @@ public:
     ofQuaternion current;
     ofQuaternion a;
     ofQuaternion b;
-    ofQuaternion identity;
     
     void setup(ofVec3f pos);
     void display();
     void motionA();
     void motionB();
+    void update();
 };
 
 

@@ -24,8 +24,14 @@ void Dihedral4::setup(ofVec3f pos){
 
 void Dihedral4::display(){
     ofPushStyle();
+    ofSetColor(153, 55, 31);
     ofPushMatrix();
+    ofTranslate(meshy.getCentroid());
     ofTranslate(pos.x, pos.y, pos.z);   //give shape position
+    ofMatrix4x4 view;
+    current.get(view);
+    ofMultMatrix(view);
+    ofTranslate(-meshy.getCentroid());
     ofRotateX(90);  //orient in x-y plane
     ofRotateY(45); //orient as square, not diamond
     ofScale(1000,1000,1000);
@@ -36,7 +42,9 @@ void Dihedral4::display(){
 
 void Dihedral4::motionA(){  
     //90 deg CCW about axis thru center parallel to z
-    
+    ofQuaternion dQ;
+    dQ.makeRotate(1, 0, 0, 1);
+    current *= dQ;
 }
 
 void Dihedral4::motionB(){  
