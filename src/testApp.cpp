@@ -37,8 +37,15 @@ void testApp::setup(){
 
 //--------------------------------------------------------------
 void testApp::update(){
-    for (int i = 0; i < 8; i++) {
-        triangles[i].motionB();
+    if (ofGetSeconds() % 5 == 0) {
+        for (int i = 0; i < 8; i++) {
+            triangles[i].motionA();
+        }
+    }
+    else{
+        for (int i = 0; i < 8; i++) {
+            triangles[i].motionB();
+        }
     }
     
     for (int i = 8; i < 16; i++) {
