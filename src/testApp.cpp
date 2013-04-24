@@ -31,6 +31,7 @@ void testApp::setup(){
     squares[1].setup(ofVec3f(820, 180, 0));
     squares[2].setup(ofVec3f(460, 540, 0));
     squares[3].setup(ofVec3f(820, 540, 0));
+    
     hexagon.setup(ofVec3f(ofGetWidth()/2, ofGetHeight()/2, 0));
 }
 
@@ -45,7 +46,7 @@ void testApp::update(){
     }
     
     for (int i = 0; i < 4; i++) {
-         squares[i].motionA();
+         squares[i].motionB();
     } 
     
     hexagon.motionA();

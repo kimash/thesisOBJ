@@ -64,6 +64,7 @@ void Dihedral3::motionB(){
 }
 
 void Dihedral3::motionB2(){
+    //motionB() for triangles pointing left or right
     ofQuaternion dQ;
     dQ.makeRotate(1, 1, 0, 0);
     current *= dQ;
