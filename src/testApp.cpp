@@ -36,8 +36,12 @@ void testApp::setup(){
 
 //--------------------------------------------------------------
 void testApp::update(){
-    for (int i = 0; i < 16; i++) {
+    for (int i = 0; i < 8; i++) {
         triangles[i].motionB();
+    }
+    
+    for (int i = 8; i < 16; i++) {
+        triangles[i].motionB2();
     }
     
     for (int i = 0; i < 4; i++) {

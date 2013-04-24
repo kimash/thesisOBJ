@@ -24,6 +24,7 @@ public:
     void display();
     void motionA();
     void motionB();
+    void motionB2();    //motion b for rotated triangles
     void update();
 };
 

@@ -62,3 +62,9 @@ void Dihedral3::motionB(){
     dQ.makeRotate(1, 0, 1, 0);
     current *= dQ;
 }
+
+void Dihedral3::motionB2(){
+    ofQuaternion dQ;
+    dQ.makeRotate(1, 1, 0, 0);
+    current *= dQ;
+}
