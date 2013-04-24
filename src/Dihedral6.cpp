@@ -33,7 +33,7 @@ void Dihedral6::display(){
     ofMultMatrix(view);
     ofTranslate(-meshy.getCentroid());    
     ofRotateX(90);  //orient in x-y plane
-    ofScale(1000,1000,1000);
+    ofScale(900,900,900);
     meshy.draw();
     ofPopMatrix();
     ofPopStyle();
@@ -42,16 +42,20 @@ void Dihedral6::display(){
 void Dihedral6::motionA(){  
     //180 deg CCW about axis across center parallel to x
     ofQuaternion dQ;
-    dQ.makeRotate(1, 1, 0, 0);
+    dQ.makeRotate(-1, 1, 0, 0);
     current *= dQ;
 }
 
 void Dihedral6::motionB(){  
     //120 degrees CCW about axis thru center parallel to z
-    
+    ofQuaternion dQ;
+    dQ.makeRotate(-1, 0, 0, 1);
+    current *= dQ;  
 }
 
 void Dihedral6::motionC(){  
     //180 degrees CCW about axis thru center parallel to z
-    
+    ofQuaternion dQ;
+    dQ.makeRotate(-1, 0, 0, 1);
+    current *= dQ; 
 }

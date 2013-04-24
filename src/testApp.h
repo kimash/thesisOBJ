@@ -22,8 +22,8 @@ class testApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
-    Dihedral3 triangle;
-    Dihedral4 square;
+    Dihedral3 triangles[16];
+    Dihedral4 squares[4];
     Dihedral6 hexagon;
 //    ofEasyCam cam;	
 };

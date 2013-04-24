@@ -11,8 +11,10 @@
 #include "ofMain.h" 
 #include "ofxObjLoader.h"
 
-void Dihedral3::setup(ofVec3f pos){
+void Dihedral3::setup(ofVec3f pos, float rotX, float rotY){
     this->pos = pos;
+    this->rotX = rotX;
+    this->rotY = rotY;
     //now my mesh is full of obj
     ofxObjLoader::load("triangle2.obj", meshy);
     //centering object
@@ -33,8 +35,9 @@ void Dihedral3::display(){
     current.get(view);
     ofMultMatrix(view);
     ofTranslate(-meshy.getCentroid());
-    ofRotateX(-90);  //orient in x-y plane
-    ofScale(1000,1000,1000);
+    ofRotateX(rotX);  //orient in x-y plane
+    ofRotateY(rotY);
+    ofScale(600,600,600);
     meshy.draw();
     ofPopMatrix();
     ofPopStyle();
@@ -48,8 +51,14 @@ void Dihedral3::update(){
 
 void Dihedral3::motionA(){  
     //60 deg CCW about axis thru center parallel to z
+    ofQuaternion dQ;
+    dQ.makeRotate(-1, 0, 0, 1);
+    current *= dQ;
 }
 
 void Dihedral3::motionB(){  
     //180 deg CCW about axis across center parallel to y
+    ofQuaternion dQ;
+    dQ.makeRotate(1, 0, 1, 0);
+    current *= dQ;
 }

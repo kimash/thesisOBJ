@@ -16,12 +16,11 @@ class Dihedral3
 {
 public:
     ofVec3f pos;    //xyz position
+    float rotX, rotY;
     ofMesh meshy;   //load obj file into this mesh
     ofQuaternion current;
-    ofQuaternion a;
-    ofQuaternion b;
     
-    void setup(ofVec3f pos);
+    void setup(ofVec3f pos, float rotX, float rotY);
     void display();
     void motionA();
     void motionB();
