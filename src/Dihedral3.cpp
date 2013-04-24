@@ -51,21 +51,25 @@ void Dihedral3::update(){
 
 void Dihedral3::motionA(){  
     //60 deg CCW about axis thru center parallel to z
-    ofQuaternion dQ;
-    dQ.makeRotate(-1, 0, 0, 1);
-    current *= dQ;
+    int degrees = 0;
+    while(degrees < 61){
+        ofQuaternion dQ;
+        dQ.makeRotate(-1, 0, 0, 1);
+        current *= dQ;
+        degrees++;
+    }
 }
 
 void Dihedral3::motionB(){  
     //180 deg CCW about axis across center parallel to y
     ofQuaternion dQ;
-    dQ.makeRotate(1, 0, 1, 0);
+    dQ.makeRotate(-1, 0, 1, 0);
     current *= dQ;
 }
 
 void Dihedral3::motionB2(){
     //motionB() for triangles pointing left or right
     ofQuaternion dQ;
-    dQ.makeRotate(1, 1, 0, 0);
+    dQ.makeRotate(-1, 1, 0, 0);
     current *= dQ;
 }

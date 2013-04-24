@@ -49,12 +49,14 @@ void testApp::update(){
          squares[i].motionB();
     } 
     
-    hexagon.motionA();
+    hexagon.motionB();
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
 //    cam.begin();
+    light.setPointLight();
+    
     for (int i = 0; i < 16; i++) {
         triangles[i].display();
     }
