@@ -2,6 +2,7 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
+    ofEnableAlphaBlending();
     ofBackground(0);
     //up pointing triangles
     triangles[0].setup(ofVec3f(460, 80, 0), -90, 0);
@@ -42,11 +43,11 @@ void testApp::update(){
             triangles[i].motionA();
         }
     }
-    else{
-        for (int i = 0; i < 8; i++) {
-            triangles[i].motionB();
-        }
-    }
+//    else{
+//        for (int i = 0; i < 8; i++) {
+//            triangles[i].motionB();
+//        }
+//    }
     
     for (int i = 8; i < 16; i++) {
         triangles[i].motionB2();

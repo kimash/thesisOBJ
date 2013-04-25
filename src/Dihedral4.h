@@ -17,6 +17,7 @@ public:
     ofVec3f pos;
     ofMesh meshy;
     ofQuaternion current;
+    ofImage design;
     
     void setup(ofVec3f pos);
     void display();

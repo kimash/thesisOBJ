@@ -13,6 +13,8 @@
 
 void Dihedral4::setup(ofVec3f pos){
     this->pos = pos;
+    design.allocate(100, 100, OF_IMAGE_COLOR_ALPHA);
+    design.loadImage("squareTex2.png");
     //now my mesh is full of obj
     ofxObjLoader::load("square.obj", meshy);
     //centering object
@@ -33,9 +35,11 @@ void Dihedral4::display(){
     ofMultMatrix(view);
     ofTranslate(-meshy.getCentroid());
     ofRotateX(90);  //orient in x-y plane
-    ofRotateY(45); //orient as square, not diamond
-    ofScale(700,700,700);
+    ofRotateY(45);  //orient as square, not diamond
+    ofScale(700,700,700);   //need to rescale tiny object
+    design.bind();  //binding design - changes mesh thickness?
     meshy.draw();
+    design.unbind();
     ofPopMatrix();
     ofPopStyle();
 }
