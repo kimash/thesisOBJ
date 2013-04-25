@@ -19,6 +19,7 @@ public:
     float rotX, rotY;
     ofMesh meshy;   //load obj file into this mesh
     ofQuaternion current;
+    int degrees;
     
     void setup(ofVec3f pos, float rotX, float rotY);
     void display();
@@ -26,6 +27,8 @@ public:
     void motionB();
     void motionB2();    //motion b for rotated triangles
     void update();  //test function
+    
+    
 };
 
 

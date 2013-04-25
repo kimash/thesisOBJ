@@ -49,10 +49,15 @@ void testApp::update(){
 //            triangles[i].motionB();
 //        }
 //    }
-    
-    for (int i = 8; i < 16; i++) {
-        triangles[i].motionB2();
+    if (ofGetSeconds() % 8 == 0) {
+        for (int i = 8; i < 16; i++) {
+            triangles[i].motionB2();
+        }
+
     }
+//    for (int i = 8; i < 16; i++) {
+//        triangles[i].motionB2();
+//    }
     
     for (int i = 0; i < 4; i++) {
          squares[i].motionB();
