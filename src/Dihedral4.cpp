@@ -50,13 +50,13 @@ void Dihedral4::display(){
 void Dihedral4::motionA(){  
     //90 deg CCW about axis thru center parallel to z
     ofQuaternion dQ;
-    dQ.makeRotate(-1, 0, 0, 1);
+    dQ.makeRotate(-1.5, 0, 0, 1);
     current *= dQ;
 }
 
 void Dihedral4::motionB(){  
     //180 deg CCW about axis across center parallel to y
     ofQuaternion dQ;
-    dQ.makeRotate(-1, 0, 1, 0);
+    dQ.makeRotate(-3, 0, 1, 0);
     current *= dQ;
 }

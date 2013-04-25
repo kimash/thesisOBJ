@@ -42,20 +42,20 @@ void Dihedral6::display(){
 void Dihedral6::motionA(){  
     //180 deg CCW about axis across center parallel to x
     ofQuaternion dQ;
-    dQ.makeRotate(-1, 1, 0, 0);
+    dQ.makeRotate(-3, 1, 0, 0);
     current *= dQ;
 }
 
 void Dihedral6::motionB(){  
     //120 degrees CCW about axis thru center parallel to z
     ofQuaternion dQ;
-    dQ.makeRotate(-1, 0, 0, 1);
+    dQ.makeRotate(-2, 0, 0, 1);
     current *= dQ;  
 }
 
 void Dihedral6::motionC(){  
     //180 degrees CCW about axis thru center parallel to z
     ofQuaternion dQ;
-    dQ.makeRotate(-1, 0, 0, 1);
+    dQ.makeRotate(-3, 0, 0, 1);
     current *= dQ; 
 }

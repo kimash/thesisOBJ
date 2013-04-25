@@ -50,12 +50,11 @@ void testApp::update(){
         for (int i = 8; i < 16; i++) {
             triangles[i].motionB2();
         }
-
     }
     
     if(ofGetSeconds() % 6 == 0){
         for (int i = 0; i < 4; i++) {
-             squares[i].motionB();
+             squares[i].motionA();
         } 
     }
     
