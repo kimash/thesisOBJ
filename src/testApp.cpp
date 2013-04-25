@@ -4,6 +4,7 @@
 void testApp::setup(){
     ofEnableAlphaBlending();
     ofBackground(0);
+    //use for loops with ? operator
     //up pointing triangles
     triangles[0].setup(ofVec3f(460, 80, 0), -90, 0);
     triangles[1].setup(ofVec3f(820, 80, 0), -90, 0);
