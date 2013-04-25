@@ -40,9 +40,9 @@ void Dihedral4::display(){
     ofRotateX(90);  //orient in x-y plane
     ofRotateY(45);  //orient as square, not diamond
     ofScale(700,700,700);   //need to rescale tiny object
-    design.bind();  //binding design - makes faces disappear?
+//    design.bind();  //binding design - makes faces disappear?
     meshy.draw();
-    design.unbind();
+//    design.unbind();
     ofPopMatrix();
     ofPopStyle();
 }
