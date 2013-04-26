@@ -2,9 +2,12 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
+    startTime = ofGetSeconds();
+    cout << "startTime: " << startTime << endl;
     ofEnableAlphaBlending();
     ofBackground(0);
     ofSetFrameRate(60);
+//    ofSetVerticalSync(true);
     //use for loops with ? operator
     //up pointing triangles
     triangles[0].setup(ofVec3f(460, 80, 0), -90, 0);
@@ -40,37 +43,50 @@ void testApp::setup(){
 
 //--------------------------------------------------------------
 void testApp::update(){
-    if (ofGetSeconds() % 4 == 0) {
+    if (abs(ofGetSeconds() - startTime) % 5 == 0) {
+        cout << "ofGetSeconds: " << ofGetSeconds() << endl;
+        cout << "timeDiff: " << abs(ofGetSeconds() - startTime) <<endl;
         for (int i = 0; i < 8; i++) {
             triangles[i].motionA();
         }
     }
 
-    if (ofGetSeconds() % 6 == 0) {
+    if (abs(ofGetSeconds() - startTime) % 7 == 0) {
         for (int i = 8; i < 16; i++) {
             triangles[i].motionB2();
         }
     }
-    
-    if(ofGetSeconds() % 6 == 0){
+
+    if (abs(ofGetSeconds() - startTime) % 5 == 0){
         for (int i = 0; i < 4; i++) {
              squares[i].motionA();
         } 
     }
-    
-    if(ofGetSeconds() % 6 == 0){
-        hexagon.motionB();
+
+    if (abs(ofGetSeconds() - startTime) % 9 == 0){
+        for (int i = 0; i < 4; i++) {
+            squares[i].motionB();
+        } 
     }
-    
-    if (ofGetSeconds() % 4 == 0) {
+
+    if (abs(ofGetSeconds() - startTime) % 7 == 0){
         hexagon.motionA();
     }
+
+    if (abs(ofGetSeconds() - startTime) % 5 == 0) {
+        hexagon.motionB();
+    }
+
+    if (abs(ofGetSeconds() - startTime) % 9 == 0) {
+        hexagon.motionC();
+    }
+        
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
 //    cam.begin();
-    light.setPointLight();
+//    light.setPointLight();
     
     for (int i = 0; i < 16; i++) {
         triangles[i].display();
