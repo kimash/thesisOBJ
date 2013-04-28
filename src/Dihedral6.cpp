@@ -11,9 +11,8 @@
 #include "ofMain.h"
 #include "ofxObjLoader.h"
 
-void Dihedral6::setup(ofVec3f pos/*, float side*/){
+void Dihedral6::setup(ofVec3f pos){
     this->pos = pos;
-    //now my mesh is full of obj
     ofxObjLoader::load("hexagon2.obj", meshy);
     //centering object
     ofVec3f centroid = meshy.getCentroid();

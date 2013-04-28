@@ -14,17 +14,16 @@
 void Dihedral4::setup(ofVec3f pos){
     this->pos = pos;
     design.loadImage("squareTex.png");
-    //now my mesh is full of obj
     ofxObjLoader::load("square.obj", meshy);
     //centering object
     ofVec3f centroid = meshy.getCentroid();
     for(int i = 0; i < meshy.getNumVertices(); i++){
         meshy.getVertices()[i] = meshy.getVertices()[i] -    centroid;
     }
-    meshy.addTexCoord(ofVec2f(0, 0));
-    meshy.addTexCoord(ofVec2f(0, 100));
-    meshy.addTexCoord(ofVec2f(100, 0));
-    meshy.addTexCoord(ofVec2f(100, 100));
+//    meshy.addTexCoord(700*ofVec2f(46.362849, 31.510546));
+//    meshy.addTexCoord(700*ofVec2f(50.362849, 27.510546));
+//    meshy.addTexCoord(700*ofVec2f(42.362849, 27.510546));
+//    meshy.addTexCoord(700*ofVec2f(46.362849, 23.510546));
 }
 
 void Dihedral4::display(){

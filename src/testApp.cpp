@@ -43,41 +43,49 @@ void testApp::setup(){
 
 //--------------------------------------------------------------
 void testApp::update(){
-    if (abs(ofGetSeconds() - startTime) % 5 == 0) {
-        cout << "ofGetSeconds: " << ofGetSeconds() << endl;
-        cout << "timeDiff: " << abs(ofGetSeconds() - startTime) <<endl;
+    int elapsedSec = abs(ofGetSeconds() - startTime);
+    
+    if (elapsedSec % 5 == 0 && elapsedSec != 0) {
+//        cout << "ofGetSeconds: " << ofGetSeconds() << endl;
+//        cout << "timeDiff: " << abs(ofGetSeconds() - startTime) <<endl;
         for (int i = 0; i < 8; i++) {
             triangles[i].motionA();
         }
     }
+    
+    if (elapsedSec % 7 == 0 && elapsedSec != 0) {
+        for (int i = 0; i < 8; i++) {
+            triangles[i].motionB();
+        }
+    }
 
-    if (abs(ofGetSeconds() - startTime) % 7 == 0) {
+    if (elapsedSec % 7 == 0 && elapsedSec != 0) {
         for (int i = 8; i < 16; i++) {
             triangles[i].motionB2();
         }
     }
 
-    if (abs(ofGetSeconds() - startTime) % 5 == 0){
+    if (elapsedSec % 5 == 0 && elapsedSec != 0){
         for (int i = 0; i < 4; i++) {
              squares[i].motionA();
         } 
     }
 
-    if (abs(ofGetSeconds() - startTime) % 9 == 0){
+    if (elapsedSec % 9 == 0 && elapsedSec != 0){
         for (int i = 0; i < 4; i++) {
             squares[i].motionB();
         } 
     }
 
-    if (abs(ofGetSeconds() - startTime) % 7 == 0){
+    if (elapsedSec % 7 == 0 && elapsedSec != 0){
         hexagon.motionA();
     }
 
-    if (abs(ofGetSeconds() - startTime) % 5 == 0) {
+    if (elapsedSec % 5 == 0 && elapsedSec != 0) {
         hexagon.motionB();
     }
 
-    if (abs(ofGetSeconds() - startTime) % 9 == 0) {
+    if (elapsedSec % 9 == 0 && elapsedSec != 0) {
         hexagon.motionC();
     }
         
