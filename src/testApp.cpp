@@ -45,7 +45,7 @@ void testApp::setup(){
 void testApp::update(){
     int elapsedSec = abs(ofGetSeconds() - startTime);
     
-    if (elapsedSec % 5 == 0 && elapsedSec != 0) {
+    if (elapsedSec % 5 == 0 && elapsedSec != 0 && elapsedSec % 7 != 0 && elapsedSec % 9 != 0) {
 //        cout << "ofGetSeconds: " << ofGetSeconds() << endl;
 //        cout << "timeDiff: " << abs(ofGetSeconds() - startTime) <<endl;
         for (int i = 0; i < 8; i++) {
@@ -53,39 +53,39 @@ void testApp::update(){
         }
     }
     
-    if (elapsedSec % 7 == 0 && elapsedSec != 0) {
+    if (elapsedSec % 7 == 0 && elapsedSec != 0 && elapsedSec % 5 != 0 && elapsedSec % 9 != 0) {
         for (int i = 0; i < 8; i++) {
             triangles[i].motionB();
         }
     }
 
-    if (elapsedSec % 7 == 0 && elapsedSec != 0) {
+    if (elapsedSec % 7 == 0 && elapsedSec != 0 && elapsedSec % 5 != 0 && elapsedSec % 9 != 0) {
         for (int i = 8; i < 16; i++) {
             triangles[i].motionB2();
         }
     }
 
-    if (elapsedSec % 5 == 0 && elapsedSec != 0){
+    if (elapsedSec % 5 == 0 && elapsedSec != 0 && elapsedSec % 7 != 0 && elapsedSec % 9 != 0){
         for (int i = 0; i < 4; i++) {
              squares[i].motionA();
         } 
     }
 
-    if (elapsedSec % 9 == 0 && elapsedSec != 0){
+    if (elapsedSec % 9 == 0 && elapsedSec != 0 && elapsedSec % 5 != 0 && elapsedSec % 7 != 0){
         for (int i = 0; i < 4; i++) {
             squares[i].motionB();
         } 
     }
 
-    if (elapsedSec % 7 == 0 && elapsedSec != 0){
+    if (elapsedSec % 7 == 0 && elapsedSec != 0 && elapsedSec % 5 != 0 && elapsedSec % 9 != 0){
         hexagon.motionA();
     }
 
-    if (elapsedSec % 5 == 0 && elapsedSec != 0) {
+    if (elapsedSec % 5 == 0 && elapsedSec != 0 && elapsedSec % 7 != 0 && elapsedSec % 9 != 0) {
         hexagon.motionB();
     }
 
-    if (elapsedSec % 9 == 0 && elapsedSec != 0) {
+    if (elapsedSec % 9 == 0 && elapsedSec != 0 && elapsedSec % 5 != 0 && elapsedSec % 7 != 0) {
         hexagon.motionC();
     }
         
