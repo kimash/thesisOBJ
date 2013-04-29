@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 void testApp::setup(){
     startTime = ofGetSeconds();
-    cout << "startTime: " << startTime << endl;
+//    cout << "startTime: " << startTime << endl;
     ofEnableAlphaBlending();
     ofBackground(0);
     ofSetFrameRate(60);

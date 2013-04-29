@@ -15,15 +15,16 @@ void Dihedral4::setup(ofVec3f pos){
     this->pos = pos;
     design.loadImage("squareTex.png");
     ofxObjLoader::load("square.obj", meshy);
+    meshy.enableTextures();
     //centering object
     ofVec3f centroid = meshy.getCentroid();
     for(int i = 0; i < meshy.getNumVertices(); i++){
         meshy.getVertices()[i] = meshy.getVertices()[i] -    centroid;
     }
-//    meshy.addTexCoord(700*ofVec2f(46.362849, 31.510546));
-//    meshy.addTexCoord(700*ofVec2f(50.362849, 27.510546));
-//    meshy.addTexCoord(700*ofVec2f(42.362849, 27.510546));
-//    meshy.addTexCoord(700*ofVec2f(46.362849, 23.510546));
+//    meshy.addTexCoord(ofVec2f(0, 0));
+//    meshy.addTexCoord(ofVec2f(0, design.getHeight()));
+//    meshy.addTexCoord(ofVec2f(design.getWidth(), 0));
+//    meshy.addTexCoord(ofVec2f(design.getWidth(), design.getHeight()));
 }
 
 void Dihedral4::display(){

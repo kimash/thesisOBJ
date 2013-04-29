@@ -51,18 +51,9 @@ void Dihedral3::update(){
 
 void Dihedral3::motionA(){  
     //120 deg CCW about axis thru center parallel to z
-//    degrees = 0;
-//    while (degrees < 121) {
         ofQuaternion dQ;
         dQ.makeRotate(-2, 0, 0, 1);
         current *= dQ;
-//        degrees++;
-//    }
-//    ofVec3f axis;
-//    float angle;
-//    current.getRotate(angle, axis);
-//    cout << angle;
-//    cout<< axis << endl;
 }
 
 void Dihedral3::motionB(){  
