@@ -2,6 +2,7 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
+    ofSetFullscreen(true);
     startTime = ofGetSeconds();
 //    cout << "startTime: " << startTime << endl;
     ofEnableAlphaBlending();
