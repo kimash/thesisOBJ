@@ -21,10 +21,14 @@ void Dihedral4::setup(ofVec3f pos){
     for(int i = 0; i < meshy.getNumVertices(); i++){
         meshy.getVertices()[i] = meshy.getVertices()[i] -    centroid;
     }
-//    meshy.addTexCoord(ofVec2f(0, 0));
-//    meshy.addTexCoord(ofVec2f(0, design.getHeight()));
-//    meshy.addTexCoord(ofVec2f(design.getWidth(), 0));
-//    meshy.addTexCoord(ofVec2f(design.getWidth(), design.getHeight()));
+    meshy.addVertex(ofVec2f(46.362849, 31.510546));
+    meshy.addTexCoord(ofVec2f(0, 0));
+    meshy.addVertex(ofVec2f(50.362849, 27.510546));
+    meshy.addTexCoord(ofVec2f(0, design.getHeight()));
+    meshy.addVertex(ofVec2f(42.362849, 27.510546));
+    meshy.addTexCoord(ofVec2f(design.getWidth(), 0));
+    meshy.addVertex(ofVec2f(46.362849, 23.510546));
+    meshy.addTexCoord(ofVec2f(design.getWidth(), design.getHeight()));
 }
 
 void Dihedral4::display(){
@@ -40,9 +44,9 @@ void Dihedral4::display(){
     ofRotateX(90);  //orient in x-y plane
     ofRotateY(45);  //orient as square, not diamond
     ofScale(700,700,700);   //need to rescale tiny object
-//    design.bind();  //binding design - makes faces disappear?
+    design.bind();  //binding design - makes faces disappear?
     meshy.draw();
-//    design.unbind();
+    design.unbind();
     ofPopMatrix();
     ofPopStyle();
 }
