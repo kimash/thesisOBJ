@@ -24,7 +24,7 @@ class testApp : public ofBaseApp{
     
     Dihedral3 triangles[16];
     Dihedral4 squares[4];
-    Dihedral6 hexagon;
+    Dihedral6 hexagon[3];
 //    ofEasyCam cam;	
 //    ofLight light;
     int startTime;

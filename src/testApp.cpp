@@ -39,7 +39,10 @@ void testApp::setup(){
     squares[2].setup(ofVec3f(460, 540, 0));
     squares[3].setup(ofVec3f(820, 540, 0));
     
-    hexagon.setup(ofVec3f(ofGetWidth()/2, ofGetHeight()/2, 0));
+    for (int i = 0; i < 3; i++) {
+        hexagon[i].setup(ofVec3f((i+1)*ofGetWidth()/4, ofGetHeight()/2, 0));
+    }
+    
 }
 
 //--------------------------------------------------------------
@@ -52,44 +55,35 @@ void testApp::update(){
         for (int i = 0; i < 8; i++) {
             triangles[i].motionA();
         }
+        for (int i = 0; i < 4; i++) {
+            squares[i].motionA();
+        }
+        for (int i = 0; i < 3; i++) {
+            hexagon[i].motionB();
+        }
     }
     
     if (elapsedSec % 7 == 0 && elapsedSec != 0 && elapsedSec % 5 != 0 && elapsedSec % 9 != 0) {
         for (int i = 0; i < 8; i++) {
             triangles[i].motionB();
         }
-    }
-
-    if (elapsedSec % 7 == 0 && elapsedSec != 0 && elapsedSec % 5 != 0 && elapsedSec % 9 != 0) {
         for (int i = 8; i < 16; i++) {
             triangles[i].motionB2();
         }
-    }
-
-    if (elapsedSec % 5 == 0 && elapsedSec != 0 && elapsedSec % 7 != 0 && elapsedSec % 9 != 0){
-        for (int i = 0; i < 4; i++) {
-             squares[i].motionA();
-        } 
+        for (int i = 0; i < 3; i++) {
+            hexagon[i].motionA();
+        }
     }
 
     if (elapsedSec % 9 == 0 && elapsedSec != 0 && elapsedSec % 5 != 0 && elapsedSec % 7 != 0){
         for (int i = 0; i < 4; i++) {
             squares[i].motionB();
-        } 
-    }
-
-    if (elapsedSec % 7 == 0 && elapsedSec != 0 && elapsedSec % 5 != 0 && elapsedSec % 9 != 0){
-        hexagon.motionA();
-    }
-
-    if (elapsedSec % 5 == 0 && elapsedSec != 0 && elapsedSec % 7 != 0 && elapsedSec % 9 != 0) {
-        hexagon.motionB();
-    }
-
-    if (elapsedSec % 9 == 0 && elapsedSec != 0 && elapsedSec % 5 != 0 && elapsedSec % 7 != 0) {
-        hexagon.motionC();
-    }
+        }
         
+        for (int i = 0; i < 3; i++) {
+            hexagon[i].motionC();
+        }
+    }        
 }
 
 //--------------------------------------------------------------
@@ -105,7 +99,10 @@ void testApp::draw(){
         squares[i].display();
     }
     
-    hexagon.display();
+    for (int i = 0; i < 3; i++) {
+         hexagon[i].display();
+    }
+   
 //    cam.end();
 }
 
