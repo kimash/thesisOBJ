@@ -9,11 +9,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "src/Dihedral4.cpp"
-         timestampString = "389208298.891128"
+         timestampString = "389217912.698779"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "43"
-         endingLineNumber = "43"
+         startingLineNumber = "47"
+         endingLineNumber = "47"
          landmarkName = "Dihedral4::display()"
          landmarkType = "5">
       </FileBreakpoint>
