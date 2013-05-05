@@ -8,22 +8,22 @@ void testApp::setup(){
     ofEnableAlphaBlending();
     ofBackground(0);
     ofSetFrameRate(60);
-    int xOffset = 180;
-    int yOffset = 180;
-    int sqDist = 240;
+    int sqDist = 320;
+    int xOffset = sqDist/2;
+    int yOffset = 2*sqDist/3;
 //    ofSetVerticalSync(true);
-    //use for loops with ? operator
     //up pointing triangles
-    triangles[0].setup(ofVec3f(460, 80, 0), -90, 0);
-    triangles[1].setup(ofVec3f(820, 80, 0), -90, 0);
-    triangles[2].setup(ofVec3f(460, 440, 0), -90, 0);
-    triangles[3].setup(ofVec3f(820, 440, 0), -90, 0);
-    
+    for (int i = 0; i < 4; i++) {
+        triangles[i].setup(ofVec3f(xOffset + i*sqDist, yOffset/2, 0), -90, 0);
+    }    
     //down pointing triangles
-    triangles[4].setup(ofVec3f(460, 280, 0), 90, 0);
-    triangles[5].setup(ofVec3f(820, 280, 0), 90, 0);
-    triangles[6].setup(ofVec3f(460, 640, 0), 90, 0);
-    triangles[7].setup(ofVec3f(820, 640, 0), 90, 0);
+    for (int i = 4; i < 8; i++) {
+        triangles[i].setup(ofVec3f(xOffset + (i-4)*sqDist, 3*yOffset/2, 0), 90, 0);
+    }
+//    triangles[4].setup(ofVec3f(460, 280, 0), 90, 0);
+//    triangles[5].setup(ofVec3f(820, 280, 0), 90, 0);
+//    triangles[6].setup(ofVec3f(460, 640, 0), 90, 0);
+//    triangles[7].setup(ofVec3f(820, 640, 0), 90, 0);
     
     //right pointing triangles
     triangles[8].setup(ofVec3f(560, 180, 0), -90, 30);
@@ -105,13 +105,13 @@ void testApp::draw(){
         triangles[i].display();
     }
     
-    for (int i = 0; i < 12; i++) {
+    for (int i = 0; i < 8; i++) {
         squares[i].display();
     }
     
-    for (int i = 0; i < 3; i++) {
-         hexagon[i].display();
-    }
+//    for (int i = 0; i < 3; i++) {
+//         hexagon[i].display();
+//    }
    
 //    cam.end();
 }

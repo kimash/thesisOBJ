@@ -47,7 +47,7 @@ void Dihedral4::display(){
     ofTranslate(-meshy.getCentroid());
     ofRotateX(90);  //orient in x-y plane
     ofRotateY(45);  //orient as square, not diamond
-    ofScale(600,600,600);   //need to rescale tiny object
+    ofScale(675,675,675);   //need to rescale tiny object
 //    design.bind();  //binding design - makes faces disappear?
     meshy.draw();
 //    design.unbind();
