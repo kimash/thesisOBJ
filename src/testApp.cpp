@@ -51,10 +51,6 @@ void testApp::setup(){
             triangles[i].setup(ofVec3f(xOffset + (i-28)*sqDist -yOffset/2, yOffset + sqDist, 0), -90, -30);
         }
     }
-//    triangles[12].setup(ofVec3f(360, 180, 0), 90, -30);
-//    triangles[13].setup(ofVec3f(720, 180, 0), 90, -30);
-//    triangles[14].setup(ofVec3f(360, 540, 0), 90, -30);
-//    triangles[15].setup(ofVec3f(720, 540, 0), 90, -30);
     
     for (int i = 0 ; i < 12; i++) {
         if (i < 4) {
@@ -125,9 +121,9 @@ void testApp::draw(){
         squares[i].display();
     }
     
-//    for (int i = 0; i < 3; i++) {
-//         hexagon[i].display();
-//    }
+    for (int i = 0; i < 3; i++) {
+         hexagon[i].display();
+    }
    
 //    cam.end();
 }
