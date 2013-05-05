@@ -37,7 +37,7 @@ void Dihedral3::display(){
     ofTranslate(-meshy.getCentroid());
     ofRotateX(rotX);  //orient in x-y plane
     ofRotateY(rotY);
-    ofScale(600,600,600);
+    ofScale(500,500,500);
     meshy.draw();
     ofPopMatrix();
     ofPopStyle();

@@ -8,6 +8,9 @@ void testApp::setup(){
     ofEnableAlphaBlending();
     ofBackground(0);
     ofSetFrameRate(60);
+    int xOffset = 180;
+    int yOffset = 180;
+    int sqDist = 240;
 //    ofSetVerticalSync(true);
     //use for loops with ? operator
     //up pointing triangles
@@ -34,11 +37,18 @@ void testApp::setup(){
     triangles[14].setup(ofVec3f(360, 540, 0), 90, -30);
     triangles[15].setup(ofVec3f(720, 540, 0), 90, -30);
     
-    squares[0].setup(ofVec3f(460, 180, 0));
-    squares[1].setup(ofVec3f(820, 180, 0));
-    squares[2].setup(ofVec3f(460, 540, 0));
-    squares[3].setup(ofVec3f(820, 540, 0));
-    
+    for (int i = 0 ; i < 12; i++) {
+        if (i < 4) {
+            squares[i].setup(ofVec3f(xOffset + i*sqDist, yOffset, 0));
+        }
+        else if (i >= 4 && i < 8) {
+            squares[i].setup(ofVec3f(xOffset + (i-4)*sqDist, yOffset + sqDist, 0));
+        }
+        else {
+            squares[i].setup(ofVec3f(xOffset + (i-8)*sqDist, yOffset + 2*sqDist, 0));
+        }
+    }
+        
     for (int i = 0; i < 3; i++) {
         hexagon[i].setup(ofVec3f((i+1)*ofGetWidth()/4, ofGetHeight()/2, 0));
     }
@@ -55,7 +65,7 @@ void testApp::update(){
         for (int i = 0; i < 8; i++) {
             triangles[i].motionA();
         }
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 12; i++) {
             squares[i].motionA();
         }
         for (int i = 0; i < 3; i++) {
@@ -76,7 +86,7 @@ void testApp::update(){
     }
 
     if (elapsedSec % 9 == 0 && elapsedSec != 0 && elapsedSec % 5 != 0 && elapsedSec % 7 != 0){
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 12; i++) {
             squares[i].motionB();
         }
         
@@ -95,7 +105,7 @@ void testApp::draw(){
         triangles[i].display();
     }
     
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 12; i++) {
         squares[i].display();
     }
     

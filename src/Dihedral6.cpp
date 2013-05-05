@@ -32,7 +32,7 @@ void Dihedral6::display(){
     ofMultMatrix(view);
     ofTranslate(-meshy.getCentroid());    
     ofRotateX(90);  //orient in x-y plane
-    ofScale(900,900,900);
+    ofScale(800,800,800);
     meshy.draw();
     ofPopMatrix();
     ofPopStyle();

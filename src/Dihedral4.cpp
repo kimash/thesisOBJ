@@ -22,7 +22,7 @@ void Dihedral4::setup(ofVec3f pos){
         meshy.getVertices()[i] = meshy.getVertices()[i] -    centroid;
     }
     //top left
-    meshy.addVertex(ofVec2f(42.362849, 27.510546));
+    /*meshy.addVertex(ofVec2f(42.362849, 27.510546));
     meshy.addTexCoord(ofVec2f(0, 0));
     //bottom left
     meshy.addVertex(ofVec2f(46.362849, 23.510546));
@@ -32,7 +32,7 @@ void Dihedral4::setup(ofVec3f pos){
     meshy.addTexCoord(ofVec2f(design.getWidth(), 0));
     //bottom right
     meshy.addVertex(ofVec2f(50.362849, 27.510546));
-    meshy.addTexCoord(ofVec2f(design.getWidth(), design.getHeight()));
+    meshy.addTexCoord(ofVec2f(design.getWidth(), design.getHeight()));*/
 }
 
 void Dihedral4::display(){
@@ -47,10 +47,10 @@ void Dihedral4::display(){
     ofTranslate(-meshy.getCentroid());
     ofRotateX(90);  //orient in x-y plane
     ofRotateY(45);  //orient as square, not diamond
-    ofScale(700,700,700);   //need to rescale tiny object
-    design.bind();  //binding design - makes faces disappear?
+    ofScale(600,600,600);   //need to rescale tiny object
+//    design.bind();  //binding design - makes faces disappear?
     meshy.draw();
-    design.unbind();
+//    design.unbind();
     ofPopMatrix();
     ofPopStyle();
 }

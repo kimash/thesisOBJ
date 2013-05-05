@@ -23,7 +23,7 @@ class testApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
     
     Dihedral3 triangles[16];
-    Dihedral4 squares[4];
+    Dihedral4 squares[12];
     Dihedral6 hexagon[3];
 //    ofEasyCam cam;	
 //    ofLight light;
