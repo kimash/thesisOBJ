@@ -61,8 +61,16 @@ void testApp::setup(){
         }
     }
         
-    for (int i = 0; i < 5; i++) {
-        hexagon[i].setup(ofVec3f((i)*ofGetWidth()/4, ofGetHeight()/2, 0));
+    for (int i = 0; i < 15; i++) {
+        if (i < 5) {
+            hexagon[i].setup(ofVec3f((i)*ofGetWidth()/4, ofGetWidth()/32, 0));
+        }
+        else if(i >= 5 && i < 10) {
+            hexagon[i].setup(ofVec3f((i-5)*ofGetWidth()/4, ofGetHeight()/2, 0));
+        }
+        else {
+            hexagon[i].setup(ofVec3f((i-10)*ofGetWidth()/4, 30*ofGetHeight()/32, 0));
+        }
     }
     
 }
@@ -80,7 +88,7 @@ void testApp::update(){
         for (int i = 0; i < 12; i++) {
             squares[i].motionA();
         }
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 15; i++) {
             hexagon[i].motionB();
         }
     }
@@ -92,7 +100,7 @@ void testApp::update(){
         for (int i = 16; i < 32; i++) {
             triangles[i].motionB2();
         }
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 15; i++) {
             hexagon[i].motionA();
         }
     }
@@ -102,7 +110,7 @@ void testApp::update(){
             squares[i].motionB();
         }
         
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 15; i++) {
             hexagon[i].motionC();
         }
     }        
@@ -121,7 +129,7 @@ void testApp::draw(){
         squares[i].display();
     }
     
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 15; i++) {
          hexagon[i].display();
     }
    
