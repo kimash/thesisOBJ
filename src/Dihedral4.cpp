@@ -13,7 +13,8 @@
 
 void Dihedral4::setup(ofVec3f pos){
     this->pos = pos;
-    design.loadImage("squareTex.png");
+    design.loadImage("squareTex2.png");
+//    design.mirror(0, 180);
     ofxObjLoader::load("square.obj", meshy);
     meshy.enableTextures();
     //centering object
@@ -21,18 +22,19 @@ void Dihedral4::setup(ofVec3f pos){
     for(int i = 0; i < meshy.getNumVertices(); i++){
         meshy.getVertices()[i] = meshy.getVertices()[i] -    centroid;
     }
+    ofDisableArbTex();
     //top left
-    /*meshy.addVertex(ofVec2f(42.362849, 27.510546));
-    meshy.addTexCoord(ofVec2f(0, 0));
-    //bottom left
-    meshy.addVertex(ofVec2f(46.362849, 23.510546));
-    meshy.addTexCoord(ofVec2f(0, design.getHeight()));
-    //top right
-    meshy.addVertex(ofVec2f(46.362849, 31.510546));
-    meshy.addTexCoord(ofVec2f(design.getWidth(), 0));
-    //bottom right
-    meshy.addVertex(ofVec2f(50.362849, 27.510546));
-    meshy.addTexCoord(ofVec2f(design.getWidth(), design.getHeight()));*/
+//    meshy.addVertex(ofVec2f(42.362849, 27.510546));
+//    meshy.addTexCoord(ofVec2f(0, 0));
+//    //bottom left
+//    meshy.addVertex(ofVec2f(46.362849, 23.510546));
+//    meshy.addTexCoord(ofVec2f(0, design.getHeight()));
+//    //top right
+//    meshy.addVertex(ofVec2f(46.362849, 31.510546));
+//    meshy.addTexCoord(ofVec2f(design.getWidth(), 0));
+//    //bottom right
+//    meshy.addVertex(ofVec2f(50.362849, 27.510546));
+//    meshy.addTexCoord(ofVec2f(design.getWidth(), design.getHeight()));
 }
 
 void Dihedral4::display(){
@@ -48,9 +50,9 @@ void Dihedral4::display(){
     ofRotateX(90);  //orient in x-y plane
     ofRotateY(45);  //orient as square, not diamond
     ofScale(675,675,675);   //need to rescale tiny object
-//    design.bind();  //binding design - makes faces disappear?
+//    design.getTextureReference().bind();  //binding design - makes faces disappear?
     meshy.draw();
-//    design.unbind();
+//    design.getTextureReference().unbind();
     ofPopMatrix();
     ofPopStyle();
 }

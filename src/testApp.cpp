@@ -8,10 +8,22 @@ void testApp::setup(){
     ofEnableAlphaBlending();
     ofBackground(0);
     ofSetFrameRate(60);
+//    material.setShininess( 120 );
+//    material.setSpecularColor(ofColor(255, 255, 255, 255));
     int sqDist = 320;
     int xOffset = sqDist/2;
     int yOffset = 200;
 //    ofSetVerticalSync(true);
+//    glEnable(GL_DEPTH_TEST);
+//    ofSetSmoothLighting(true);
+//    for(int i = 0; i < 3; i++) {
+        /*directionalLight.setDiffuseColor(ofColor(0.f, 0.f, 255.f));
+        directionalLight.setSpecularColor(ofColor(255.f, 255.f, 255.f));
+        directionalLight.setDirectional();
+        directionalLight.setPosition(ofGetWidth()/2, ofGetHeight()/2, 0);
+        directionalLight.setOrientation( ofVec3f(0, 180, 90) );*/
+//    }
+    
     //up pointing triangles
     for (int i = 0; i < 8; i++) {
         if (i < 4) {
@@ -20,8 +32,8 @@ void testApp::setup(){
         else {
            triangles[i].setup(ofVec3f(xOffset + (i-4)*sqDist, 2.1*yOffset, 0), -90, 0); 
         }
-
-    }    
+    } 
+    
     //down pointing triangles
     for (int i = 8; i < 16; i++) {
         if (i < 12) {
@@ -51,7 +63,8 @@ void testApp::setup(){
             triangles[i].setup(ofVec3f(xOffset + (i-28)*sqDist -yOffset/2, yOffset + sqDist, 0), -90, -30);
         }
     }
-    
+  
+    //squares
     for (int i = 0 ; i < 12; i++) {
         if (i < 4) {
             squares[i].setup(ofVec3f(xOffset + i*sqDist, yOffset, 0));
@@ -60,7 +73,8 @@ void testApp::setup(){
             squares[i].setup(ofVec3f(xOffset + (i-4)*sqDist, yOffset + sqDist, 0));
         }
     }
-        
+    
+    //hexagons
     for (int i = 0; i < 15; i++) {
         if (i < 5) {
             hexagon[i].setup(ofVec3f((i)*ofGetWidth()/4, ofGetWidth()/32, 0));
@@ -119,8 +133,12 @@ void testApp::update(){
 //--------------------------------------------------------------
 void testApp::draw(){
 //    cam.begin();
-//    light.setPointLight();
+//    ofEnableLighting();
+//    for (int i = 0; i < 3; i++) {
+//        directionalLight.enable();
+//    }
     
+//    material.begin();
     for (int i = 0; i < 32; i++) {
         triangles[i].display();
     }
@@ -132,7 +150,8 @@ void testApp::draw(){
     for (int i = 0; i < 15; i++) {
          hexagon[i].display();
     }
-   
+//    material.end();
+//   ofDisableLighting();
 //    cam.end();
 }
 
