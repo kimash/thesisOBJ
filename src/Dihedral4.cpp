@@ -40,9 +40,9 @@ void Dihedral4::display(){
     ofScale(675,675,675);   //need to rescale tiny object
     design.getTextureReference().bind();  //binding design - makes faces disappear?
     meshy.draw();
-    int vertexId = (ofGetFrameNum()/30) % meshy.getNumVertices();
-    //ofSetColor(255, 0,0);
-    //ofSphere(meshy.getVertex(vertexId), .01);
+//    int vertexId = (ofGetFrameNum()/30) % meshy.getNumVertices();
+//    ofSetColor(255, 0,0);
+//    ofSphere(meshy.getVertex(vertexId), .01);
     design.getTextureReference().unbind();
     ofPopMatrix();
     ofPopStyle();
