@@ -15,8 +15,13 @@ void Dihedral3::setup(ofVec3f pos, float rotX, float rotY){
     this->pos = pos;
     this->rotX = rotX;
     this->rotY = rotY;
+    
+    ofEnableNormalizedTexCoords();
+    design.loadImage("triTex.png");
+    design.mirror(0, 180);
     //now my mesh is full of obj
     ofxObjLoader::load("triangle2.obj", meshy);
+    meshy.enableTextures();
     //centering object
     ofVec3f centroid = meshy.getCentroid();
     for(int i = 0; i < meshy.getNumVertices(); i++){
@@ -38,7 +43,12 @@ void Dihedral3::display(){
     ofRotateX(rotX);  //orient in x-y plane
     ofRotateY(rotY);
     ofScale(575,575,575);
+//    design.getTextureReference().bind();
     meshy.draw();
+    int vertexId = (ofGetFrameNum()/60) % meshy.getNumVertices();
+    ofSetColor(255, 0,0);
+    ofSphere(meshy.getVertex(vertexId), .01);
+//    design.getTextureReference().unbind();
     ofPopMatrix();
     ofPopStyle();
 }

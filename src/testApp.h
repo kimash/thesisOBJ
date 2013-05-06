@@ -25,8 +25,5 @@ class testApp : public ofBaseApp{
     Dihedral3 triangles[32];
     Dihedral4 squares[12];
     Dihedral6 hexagon[15];
-//    ofEasyCam cam;	
-//    ofLight directionalLight;
     int startTime;
-//    ofMaterial material;
 };

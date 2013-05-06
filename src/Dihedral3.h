@@ -19,6 +19,7 @@ public:
     float rotX, rotY;
     ofMesh meshy;   //load obj file into this mesh
     ofQuaternion current;
+    ofImage design;
     
     void setup(ofVec3f pos, float rotX, float rotY);
     void display();

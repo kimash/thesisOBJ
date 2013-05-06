@@ -16,7 +16,6 @@ void Dihedral4::setup(ofVec3f pos){
     
     ofEnableNormalizedTexCoords();
     design.loadImage("squareTex.png");
-//    design.mirror(0, 180);
     ofxObjLoader::load("square.obj", meshy);
     meshy.enableTextures();
     //centering object
@@ -24,19 +23,6 @@ void Dihedral4::setup(ofVec3f pos){
     for(int i = 0; i < meshy.getNumVertices(); i++){
         meshy.getVertices()[i] = meshy.getVertices()[i] -    centroid;
     }
-//    ofDisableArbTex();
-    //top left
-//    meshy.addVertex(ofVec2f(42.362849, 27.510546));
-//    meshy.addTexCoord(ofVec2f(0, 0));
-//    //bottom left
-//    meshy.addVertex(ofVec2f(46.362849, 23.510546));
-//    meshy.addTexCoord(ofVec2f(0, design.getHeight()));
-//    //top right
-//    meshy.addVertex(ofVec2f(46.362849, 31.510546));
-//    meshy.addTexCoord(ofVec2f(design.getWidth(), 0));
-//    //bottom right
-//    meshy.addVertex(ofVec2f(50.362849, 27.510546));
-//    meshy.addTexCoord(ofVec2f(design.getWidth(), design.getHeight()));
 }
 
 void Dihedral4::display(){

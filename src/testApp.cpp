@@ -8,22 +8,10 @@ void testApp::setup(){
     ofEnableAlphaBlending();
     ofBackground(0);
     ofSetFrameRate(60);
-//    material.setShininess( 120 );
-//    material.setSpecularColor(ofColor(255, 255, 255, 255));
+
     int sqDist = 320;
     int xOffset = sqDist/2;
     int yOffset = 200;
-//    ofSetVerticalSync(true);
-//    glEnable(GL_DEPTH_TEST);
-//    ofSetSmoothLighting(true);
-////    for(int i = 0; i < 3; i++) {
-//        directionalLight.setDiffuseColor(ofColor(0.f, 0.f, 255.f));
-//        directionalLight.setSpecularColor(ofColor(255.f, 255.f, 255.f));
-//        directionalLight.setDirectional();
-//        directionalLight.setPosition(ofGetWidth()/2, ofGetHeight()/2, 0);
-//        directionalLight.setOrientation( ofVec3f(0, 180, 90) );
-////    }
-//    directionalLight.setAttenuation(0,1,1);
     //up pointing triangles
     for (int i = 0; i < 8; i++) {
         if (i < 4) {
@@ -132,13 +120,6 @@ void testApp::update(){
 
 //--------------------------------------------------------------
 void testApp::draw(){
-//    cam.begin();
-//    ofEnableLighting();
-//    for (int i = 0; i < 3; i++) {
-//        directionalLight.enable();
-//    }
-    
-//    material.begin();
     for (int i = 0; i < 32; i++) {
         triangles[i].display();
     }
@@ -150,9 +131,6 @@ void testApp::draw(){
     for (int i = 0; i < 15; i++) {
          hexagon[i].display();
     }
-//    material.end();
-   ofDisableLighting();
-//    cam.end();
 }
 
 //--------------------------------------------------------------
