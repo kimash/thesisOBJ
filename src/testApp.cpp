@@ -16,14 +16,14 @@ void testApp::setup(){
 //    ofSetVerticalSync(true);
 //    glEnable(GL_DEPTH_TEST);
 //    ofSetSmoothLighting(true);
-//    for(int i = 0; i < 3; i++) {
-        /*directionalLight.setDiffuseColor(ofColor(0.f, 0.f, 255.f));
-        directionalLight.setSpecularColor(ofColor(255.f, 255.f, 255.f));
-        directionalLight.setDirectional();
-        directionalLight.setPosition(ofGetWidth()/2, ofGetHeight()/2, 0);
-        directionalLight.setOrientation( ofVec3f(0, 180, 90) );*/
-//    }
-    
+////    for(int i = 0; i < 3; i++) {
+//        directionalLight.setDiffuseColor(ofColor(0.f, 0.f, 255.f));
+//        directionalLight.setSpecularColor(ofColor(255.f, 255.f, 255.f));
+//        directionalLight.setDirectional();
+//        directionalLight.setPosition(ofGetWidth()/2, ofGetHeight()/2, 0);
+//        directionalLight.setOrientation( ofVec3f(0, 180, 90) );
+////    }
+//    directionalLight.setAttenuation(0,1,1);
     //up pointing triangles
     for (int i = 0; i < 8; i++) {
         if (i < 4) {
@@ -151,7 +151,7 @@ void testApp::draw(){
          hexagon[i].display();
     }
 //    material.end();
-//   ofDisableLighting();
+   ofDisableLighting();
 //    cam.end();
 }
 
