@@ -27,7 +27,7 @@ void Dihedral4::setup(ofVec3f pos){
 
 void Dihedral4::display(){
     ofPushStyle();
-    ofSetColor(153, 55, 31);
+//    ofSetColor(153, 55, 31);
     ofPushMatrix();
     ofTranslate(meshy.getCentroid());
     ofTranslate(pos.x, pos.y, pos.z);   //give shape position

@@ -32,7 +32,7 @@ void Dihedral3::setup(ofVec3f pos, float rotX, float rotY){
 
 void Dihedral3::display(){
     ofPushStyle();
-    ofSetColor(42, 53, 105);
+//    ofSetColor(42, 53, 105);
     ofPushMatrix();
     ofTranslate(meshy.getCentroid());
     ofTranslate(pos.x, pos.y, pos.z);   //give shape position
@@ -43,12 +43,12 @@ void Dihedral3::display(){
     ofRotateX(rotX);  //orient in x-y plane
     ofRotateY(rotY);
     ofScale(575,575,575);
-//    design.getTextureReference().bind();
+    design.getTextureReference().bind();
     meshy.draw();
-    int vertexId = (ofGetFrameNum()/60) % meshy.getNumVertices();
-    ofSetColor(255, 0,0);
-    ofSphere(meshy.getVertex(vertexId), .01);
-//    design.getTextureReference().unbind();
+//    int vertexId = (ofGetFrameNum()/60) % meshy.getNumVertices();
+//    ofSetColor(255, 0,0);
+//    ofSphere(meshy.getVertex(vertexId), .01);
+    design.getTextureReference().unbind();
     ofPopMatrix();
     ofPopStyle();
 }
