@@ -13,6 +13,9 @@
 
 void Dihedral6::setup(ofVec3f pos){
     this->pos = pos;
+    
+    ofEnableNormalizedTexCoords();
+    design.loadImage("hexTex.png");
     ofxObjLoader::load("hexagon2.obj", meshy);
     //centering object
     ofVec3f centroid = meshy.getCentroid();
@@ -23,7 +26,7 @@ void Dihedral6::setup(ofVec3f pos){
 
 void Dihedral6::display(){
     ofPushStyle();
-    ofSetColor(54, 136, 176);
+//    ofSetColor(54, 136, 176);
     ofPushMatrix();
     ofTranslate(meshy.getCentroid());
     ofTranslate(pos.x, pos.y, pos.z);   //give shape position
@@ -33,7 +36,12 @@ void Dihedral6::display(){
     ofTranslate(-meshy.getCentroid());    
     ofRotateX(90);  //orient in x-y plane
     ofScale(875,875,875);
+    design.getTextureReference().bind();
     meshy.draw();
+//    int vertexId = (ofGetFrameNum()/30) % meshy.getNumVertices();
+//    ofSetColor(255, 0,0);
+//    ofSphere(meshy.getVertex(vertexId), .01);
+    design.getTextureReference().unbind();
     ofPopMatrix();
     ofPopStyle();
 }
