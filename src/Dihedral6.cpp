@@ -15,7 +15,7 @@ void Dihedral6::setup(ofVec3f pos){
     this->pos = pos;
     
     ofEnableNormalizedTexCoords();
-    design.loadImage("hexTex.png");
+    design.loadImage("hexTex2.png");
     ofxObjLoader::load("hexagon2.obj", meshy);
     //centering object
     ofVec3f centroid = meshy.getCentroid();

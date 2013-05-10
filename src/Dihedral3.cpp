@@ -17,7 +17,7 @@ void Dihedral3::setup(ofVec3f pos, float rotX, float rotY){
     this->rotY = rotY;
     
     ofEnableNormalizedTexCoords();
-    design.loadImage("triTex.png");
+    design.loadImage("triTex2.png");
     //now my mesh is full of obj
     ofxObjLoader::load("triangle2.obj", meshy);
     meshy.enableTextures();

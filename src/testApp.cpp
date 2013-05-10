@@ -3,6 +3,7 @@
 //--------------------------------------------------------------
 void testApp::setup(){
 //    ofSetFullscreen(true);
+//    ofHideCursor();
     startTime = ofGetSeconds();
 //    cout << "startTime: " << startTime << endl;
     ofEnableAlphaBlending();
